@@ -2,28 +2,33 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <title>Alura Typer</title>
 </head>
 <body>
     <!-- Seja bem vindo ao curso de jQuery :) -->
-    <h1>Alura Typer</h1>
-    <p class="frase">Belas palavras nessa gota.</p>
 
-    <ul class="informacoes">
-        <li><span id ="tamanho-frase">19</span> palavras</li>
-        <li><span id="tempo-digitacao">3</span> segundos</li>
-    </ul>
+    <div class="container">
+        <h1 class="center">Alura Typer</h1>
+        <p class="frase center">Texto de exemplo para teste de digitação.</p>
 
-    <textarea name="campoDigitacao" class="campo-digitacao" cols="40" rows="8"></textarea>
+        <ul class="informacoes center">
+            <li><span id ="tamanho-frase">19</span> palavras</li>
+            <li><span id="tempo-digitacao">3</span> segundos</li>
+        </ul>
 
-    <ul>
+        <textarea name="campoDigitacao" class="campo-digitacao" cols="40" rows="8"></textarea>
 
-        <li><span id="contador-caracteres">0</span> caracteres</li>
-        <li><span id="contador-palavras">0</span> palavras</li>
+        <ul>
 
-    </ul>
+            <li><span id="contador-caracteres">0</span> caracteres</li>
+            <li><span id="contador-palavras">0</span> palavras</li>
 
-    <button id="botao-reiniciar">Reiniciar Jogo</button>
+        </ul>
+
+        <button id="botao-reiniciar">Reiniciar Jogo</button>
+    </div>
 
 <script src="js/jquery.js"></script>      
 <script src="js/main.js"></script>
