@@ -8,7 +8,7 @@ var campo = $(".campo-digitacao");
 campo.on("input",function() {
 
      var conteudo = campo.val();
-     var quantidadePalavras = conteudo.split(" ").length;
+     var quantidadePalavras = conteudo.split(/\S+/).length - 1;
      $("#contador-palavras").text(quantidadePalavras);
 
      var quantidadeCaracteres = conteudo.length;
