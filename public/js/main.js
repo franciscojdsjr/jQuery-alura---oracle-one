@@ -1,3 +1,4 @@
+var tempoInicial = $("#tempo-digitacao").text();
 var frase = $(".frase").text();
 var numPalavras = frase.split(" ").length;
 
@@ -29,7 +30,15 @@ campo.one("focus",function() {
             clearInterval(cronometroID);
         }
     },1000);
+});
 
+$("#botao-reiniciar").click(function(){
 
+    campo.attr("disabled", false);
+    campo.val("");
+    $("#contador-palavras").text("0");
+    $("#contador-caracteres").text("0");
+    $("#tempo-digitacao").text(tempoInicial);
+    
 
 });
