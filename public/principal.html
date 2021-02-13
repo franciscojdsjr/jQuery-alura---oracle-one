@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
     <link rel="stylesheet" href="css/estilos.css">
+
     <title>Alura Typer</title>
 </head>
 <body>
@@ -14,8 +16,14 @@
         <p class="frase center">Texto de exemplo para teste de digitação.</p>
 
         <ul class="informacoes center">
-            <li><span id ="tamanho-frase">19</span> palavras</li>
-            <li><span id="tempo-digitacao">3</span> segundos</li>
+            <li>
+                <i class="small material-icons icones">description</i>
+                <span id ="tamanho-frase">19</span> palavras
+            </li>
+            <li>
+                <i class="small material-icons icones">query_builder</i>
+                <span id="tempo-digitacao">3</span> segundos
+            </li>
         </ul>
 
         <textarea name="campoDigitacao" class="campo-digitacao" cols="40" rows="8"></textarea>
@@ -27,7 +35,12 @@
 
         </ul>
 
-        <button id="botao-reiniciar">Reiniciar Jogo</button>
+        <div class="botoes">
+            <a id="botao-reiniciar" class="btn-floating btn-large waves-effect waves-light red">
+                <i class="material-icons">restore</i>
+            </a>
+        </div>
+        
     </div>
 
 <script src="js/jquery.js"></script>      

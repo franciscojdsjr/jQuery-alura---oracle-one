@@ -64,6 +64,7 @@ function reiniciaJogo() {
         $("#contador-palavras").text("0");
         $("#contador-caracteres").text("0");
         $("#tempo-digitacao").text(tempoInicial);
-        inicializaCronometro();    
+        inicializaCronometro();   
+        campo.removeClass("campo-desativado") 
 });}
 
