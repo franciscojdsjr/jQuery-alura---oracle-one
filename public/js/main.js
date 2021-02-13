@@ -41,6 +41,7 @@ function inicializaCronometro() {
 
 campo.one("focus",function() {
 
+    $("#botao-reiniciar").attr("disabled",true);
     var cronometroID = setInterval(function(){
         tempoRestante--;
         $("#tempo-digitacao").text(tempoRestante);
@@ -48,6 +49,7 @@ campo.one("focus",function() {
         if(tempoRestante < 1) {
             campo.attr("disabled", true);
             clearInterval(cronometroID);
+            $("#botao-reiniciar").attr("disabled", false);
         }
     },1000);
 });}
