@@ -48,6 +48,7 @@ campo.one("focus",function() {
 
         if(tempoRestante < 1) {
             campo.attr("disabled", true);
+            campo.addClass("campo-desativado");
             clearInterval(cronometroID);
             $("#botao-reiniciar").attr("disabled", false);
         }
