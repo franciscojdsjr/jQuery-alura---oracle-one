@@ -34,7 +34,7 @@ campo.on("input",function() {
      var quantidadeCaracteres = conteudo.length;
      $("#contador-caracteres").text(quantidadeCaracteres);
 
-});}
+});};
 
 function inicializaCronometro() {
 
@@ -48,13 +48,12 @@ campo.one("focus",function() {
         $("#tempo-digitacao").text(tempoRestante);
 
         if(tempoRestante < 1) {
-            campo.attr("disabled", true);
-            campo.addClass("campo-desativado");
             clearInterval(cronometroID);
             $("#botao-reiniciar").attr("disabled", false);
+            finalizaJogo();
         }
     },1000);
-});}
+});};
 
 
 
@@ -77,7 +76,18 @@ function inicializaBordaValidadora () {
 
 
         });
-}
+};
+
+
+
+function inserePlacar(){
+
+    var corpoTabela = $(".placar").find("tbody");
+    var usuario = "Francisco";
+    var numeroPalavras = $("#contador-palavras").text();
+
+};
+
 
 function reiniciaJogo() {
 
@@ -92,5 +102,11 @@ function reiniciaJogo() {
         campo.removeClass("campo-desativado");
         campo.removeClass("borda-vermelha");
         campo.removeClass("borda-verde");
-});}
+});};
 
+function finalizaJogo() {
+
+    campo.attr("disabled", true);
+    campo.addClass("campo-desativado");
+    inserePlacar();
+};
