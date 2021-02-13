@@ -15,3 +15,11 @@ campo.on("input",function() {
      $("#contador-caracteres").text(quantidadeCaracteres);
 
 });
+campo.on("focus",function() {
+
+    var tempoRestante = $("#tempo-digitacao").text();
+    
+
+
+
+});
