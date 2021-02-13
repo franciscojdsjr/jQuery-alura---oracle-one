@@ -6,6 +6,7 @@ $(function(){
     atualizaTamanhoFrase();
     incializaContadores();
     inicializaCronometro();
+    inicializaBordaValidadora ();
     $("#botao-reiniciar").click(reiniciaJogo);
 });
 
@@ -55,6 +56,29 @@ campo.one("focus",function() {
     },1000);
 });}
 
+
+
+function inicializaBordaValidadora () {
+
+        var frase = $(".frase").text();
+        campo.on("input", function(){
+            var digitado = campo.val();
+            var comparavel = frase.substr(0 , digitado.length);
+            
+            if(digitado == comparavel){
+
+                campo.addClass("borda-verde");
+                campo.removeClass("borda-vermelha");
+                
+            }else{
+                campo.addClass("borda-vermelha");
+                campo.removeClass("borda-verde");
+            }
+
+
+        });
+}
+
 function reiniciaJogo() {
 
     $("#botao-reiniciar").click(function(){
@@ -65,6 +89,8 @@ function reiniciaJogo() {
         $("#contador-caracteres").text("0");
         $("#tempo-digitacao").text(tempoInicial);
         inicializaCronometro();   
-        campo.removeClass("campo-desativado") 
+        campo.removeClass("campo-desativado");
+        campo.removeClass("borda-vermelha");
+        campo.removeClass("borda-verde");
 });}
 

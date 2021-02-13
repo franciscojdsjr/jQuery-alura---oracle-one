@@ -5,6 +5,7 @@
 .campo-digitacao {
   font-size: 18px;
   height: 130px;
+  border: 3px solid black;
 }
 
 .campo-desativado {
@@ -13,4 +14,12 @@
 
 .icones {
   vertical-align: middle;
+}
+
+.borda-verde {
+  border: 3px solid green;
+}
+
+.borda-vermelha {
+  border: 3px solid red;
 }
