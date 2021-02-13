@@ -4,4 +4,14 @@ var numPalavras = frase.split(" ").length;
 var tamanhoFrase = $("#tamanho-frase");
 tamanhoFrase.text(numPalavras);
 
-$(".campo-digitacao");
+var campo = $(".campo-digitacao");
+campo.on("input",function() {
+
+     var conteudo = campo.val();
+     var quantidadePalavras = conteudo.split(" ").length;
+     $("#contador-palavras").text(quantidadePalavras);
+
+     var quantidadeCaracteres = conteudo.length;
+     $("#contador-caracteres").text(quantidadeCaracteres);
+
+});
