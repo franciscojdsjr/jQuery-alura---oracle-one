@@ -27,3 +27,11 @@
 .contadores {
   font-weight: bold;
 }
+
+.placar {
+  display: none;
+}
+
+body {
+  overflow: scroll;
+}
