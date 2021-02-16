@@ -1,6 +1,7 @@
 var tempoInicial = $("#tempo-digitacao").text();
 var campo = $(".campo-digitacao");
 
+
 $(function(){
 
     atualizaTamanhoFrase();
@@ -8,6 +9,7 @@ $(function(){
     inicializaCronometro();
     inicializaBordaValidadora ();
     $("#botao-reiniciar").click(reiniciaJogo);
+    $(".botao-remover").click(removeLinha);
 });
 
 
@@ -125,6 +127,25 @@ function removeLinha(event) {
     },300);
 }
 
+$("#botao-placar").click(mostraPlacar);
+
+function mostraPlacar() {
+
+    $(".placar").stop().slideToggle(150);
+
+
+
+};
+
+function scrollPlacar() {
+    var posicaoPlacar = $(".placar").offset().top;
+
+    $("html, body").animate(
+    {
+        scrollTop: posicaoPlacar
+    }, 300);
+}
+
 function reiniciaJogo() {
 
     $("#botao-reiniciar").click(function(){
@@ -149,21 +170,3 @@ function finalizaJogo() {
 };
 
 
-$("#botao-placar").click(mostraPlacar);
-
-function mostraPlacar() {
-
-    $(".placar").stop().slideToggle(150);
-
-
-
-};
-
-function scrollPlacar() {
-    var posicaoPlacar = $(".placar").offset().top;
-
-    $("html, body").animate(
-    {
-        scrollTop: posicaoPlacar
-    }, 300);
-}
