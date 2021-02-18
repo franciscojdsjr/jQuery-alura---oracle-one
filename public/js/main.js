@@ -40,10 +40,11 @@ campo.on("input",function() {
 
 function inicializaCronometro() {
 
-    var tempoRestante = $("#tempo-digitacao").text();
+    
 
 campo.one("focus",function() {
 
+    var tempoRestante = $("#tempo-digitacao").text();
     $("#botao-reiniciar").attr("disabled",true);
     var cronometroID = setInterval(function(){
         tempoRestante--;
@@ -57,14 +58,23 @@ campo.one("focus",function() {
     },1000);
 });};
 
+function atualizaTempoInicial (tempo){
+
+
+    tempoInicial = tempo;
+    $("#tempo-digitacao").text(tempo);
+
+};
+
 
 
 function inicializaBordaValidadora () {
 
-        var frase = $(".frase").text();
+        
         campo.on("input", function(){
+            var frase = $(".frase").text();
             var digitado = campo.val();
-            var comparavel = frase.substr(0 , digitado.length);
+            var comparavel = frase.substr(0,digitado.length);
             
             if(digitado == comparavel){
 
@@ -169,4 +179,18 @@ function finalizaJogo() {
     removeLinha();
 };
 
+$("#botao-frase").click(fraseAleatoria);
 
+function fraseAleatoria() {
+    $.get("http://localhost:3000/frases", trocaFraseAleatoria);
+}
+
+function trocaFraseAleatoria(data) {
+    var frase = $(".frase");
+    var numeroAleatorio = Math.floor(Math.random() * data.length);
+    
+    frase.text(data[numeroAleatorio].texto);
+    atualizaTamanhoFrase();
+    atualizaTempoInicial(data[numeroAleatorio].tempo);
+
+}
