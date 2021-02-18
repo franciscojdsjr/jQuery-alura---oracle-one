@@ -182,8 +182,25 @@ function finalizaJogo() {
 $("#botao-frase").click(fraseAleatoria);
 
 function fraseAleatoria() {
-    $.get("http://localhost:3000/frases", trocaFraseAleatoria);
-}
+
+    $("#spinner").toggle();
+
+    $.get("http://localhost:3000/frases", trocaFraseAleatoria).fail(function() {
+
+        setTimeout(function(){
+
+            $("#erro").toggle();      
+
+        },2000);
+
+
+    })
+    .always(function(){
+
+            $("#spinner").toggle();
+
+    });
+};
 
 function trocaFraseAleatoria(data) {
     var frase = $(".frase");
@@ -194,3 +211,4 @@ function trocaFraseAleatoria(data) {
     atualizaTempoInicial(data[numeroAleatorio].tempo);
 
 }
+
