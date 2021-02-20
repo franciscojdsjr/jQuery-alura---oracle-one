@@ -181,6 +181,7 @@ function finalizaJogo() {
 
 $("#botao-frase").click(fraseAleatoria);
 $("#botao-frase-id").click(buscaFrase);
+$("#botao-sync").click(sincronizaPlacar);
 
 function fraseAleatoria() {
 
@@ -243,5 +244,12 @@ function trocaFraseAleatoria(data) {
     atualizaTamanhoFrase();
     atualizaTempoInicial(data[numeroAleatorio].tempo);
 
-}
+};
+
+
+function sincronizaPlacar() {
+
+    
+
+};
 
